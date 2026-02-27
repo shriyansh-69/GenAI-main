@@ -9,7 +9,7 @@ TF-IDF + Cosine Similarity retrieval and basic NLP preprocessing.
 
 You Can Access The Medical Q&A Chatbot At This Below Link :- <br>
 
-🔗 [Medical_Q&A_Chatbot](https://medicalchatbot2.streamlit.app/) 
+🔗 [Medical_Q&A_Chatbot](https://medicalchatbotapplication2.streamlit.app/) 
 
 ---
 
