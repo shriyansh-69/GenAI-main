@@ -6,7 +6,7 @@ TF-IDF + Cosine Similarity retrieval and basic NLP preprocessing.
 --- 
 
 # ⚠️ Notice
-This project was deleted during restructuring and has since been rebuilt. Earlier commit history may not be visible.
+This repository was previously deleted from GitHub and has been restored from a local backup. Earlier commit history may not be visible.
 
 ---
 

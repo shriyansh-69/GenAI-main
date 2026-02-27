@@ -8,6 +8,6 @@ Each project in this repository is maintained in its own dedicated folder for be
 --- 
 
 # ⚠️ Notice
-This project was deleted during restructuring and has since been rebuilt. Earlier commit history may not be visible.
+This repository was previously deleted from GitHub and has been restored from a local backup. Earlier commit history may not be visible.
 
 ---
