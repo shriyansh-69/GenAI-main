@@ -5,6 +5,11 @@ TF-IDF + Cosine Similarity retrieval and basic NLP preprocessing.
 
 --- 
 
+# ⚠️ Notice
+This project was deleted during restructuring and has since been rebuilt. Earlier commit history may not be visible.
+
+---
+
 ## 🌐 Live Demo 
 
 You Can Access The Medical Q&A Chatbot At This Below Link :- <br>
