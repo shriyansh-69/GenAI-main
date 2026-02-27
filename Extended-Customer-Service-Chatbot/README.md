@@ -3,6 +3,11 @@
 A Streamlit-based Retireval-Augmented Generation(RAG) chatbot built using FAISS Vector Database Automatically updates its Knwoledge Base Using Scheduled Background Indexing With Hash-Based Deduplication To Ensure Accurate And Up-To-Date Response Without Manual Retraining.
 
 ---
+
+# ⚠️ Notice
+This project was deleted during restructuring and has since been rebuilt. Earlier commit history may not be visible.
+
+---
 ## 🌐 Live Demo 
 
 You Can Access The Customer_Service_Chatbot At This Below Link :- <br>
