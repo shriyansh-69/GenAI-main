@@ -5,7 +5,7 @@ An Emotion-Aware Chatbot that detects user sentiment (Positive, Negative, or Neu
 ---
 
 # ⚠️ Notice
-This repository was previously deleted from GitHub and has been restored from a local backup. Earlier commit history may not be visible.
+This Project was previously deleted from GitHub and has been restored from a local backup. Earlier commit history may not be visible.
 
 ---
 
