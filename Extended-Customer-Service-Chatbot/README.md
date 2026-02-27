@@ -7,7 +7,7 @@ A Streamlit-based Retireval-Augmented Generation(RAG) chatbot built using FAISS 
 
 You Can Access The Customer_Service_Chatbot At This Below Link :- <br>
 
-🔗 [Customer Service Chatbot](https://customerservicechatbot2.streamlit.app/)
+🔗 [Customer Service Chatbot](https://customerservicechatbot69.streamlit.app/)
 
 ---
 
