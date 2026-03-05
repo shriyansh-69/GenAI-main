@@ -42,6 +42,12 @@ with open(input_file,"r",encoding="utf-8") as f:
 print(f"Total CS papers extracted: {len(cs_papers)}")
 
 
+# Saving  filtered dataset
+with open(output_file, "w", encoding="utf-8") as f:
+    json.dump(cs_papers, f, indent=2)
+
+print("\nFiltered dataset saved successfully!")
+print(f"Location: {output_file}")
 
         
 
