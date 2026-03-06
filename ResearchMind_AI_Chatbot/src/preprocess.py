@@ -33,10 +33,19 @@ print(f"Loaded {len(papers)} Paper's ")
 
 
 # Preprocess Abstracts
+
 for paper in papers:
     abstract = paper.get("abstract")
     paper["clean_abstract"] = clean_text(abstract)
 
+
+# Saving processed Dataset
+
+with open("data/arxiv_cs_clean.json","w",encoding="utf-8") as s:
+    json.dump(paper,f,indent=2)
+
+print("Preprocessing Completed")
+print("Saved as: data/arxiv_cs_clean.json")
 
 
 
