@@ -25,4 +25,19 @@ def clean_text(text):
 
     return ''.join(words)
 
+# Loading The Filtered Dataset 
+with open("data/arxiv_cs.json","r",encoding="utf-8") as f:
+    papers = json.load(f)
+
+print(f"Loaded {len(papers)} Paper's ")
+
+
+# Preprocess Abstracts
+for paper in papers:
+    abstract = paper.get("abstract")
+    paper["clean_abstract"] = clean_text(abstract)
+
+
+
+
 
