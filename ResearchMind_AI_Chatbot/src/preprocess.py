@@ -9,7 +9,7 @@ nltk.download('stopwords')
 nltk.download('wordnet')
 
 lemmatizer = WordNetLemmatizer()
-stopwords = set(stopwords.words("english"))
+stop_word = set(stopwords.words("english"))
 
 def clean_text(text):
     text = text.lower()
@@ -20,10 +20,10 @@ def clean_text(text):
     words = [
         lemmatizer.lemmatize(word)
         for word in words
-        if word not in stopwords
+        if word not in stop_word
     ]
 
-    return ''.join(words)
+    return " ".join(words)
 
 # Loading The Filtered Dataset 
 with open("data/arxiv_cs.json","r",encoding="utf-8") as f:
@@ -35,14 +35,14 @@ print(f"Loaded {len(papers)} Paper's ")
 # Preprocess Abstracts
 
 for paper in papers:
-    abstract = paper.get("abstract")
+    abstract = paper.get("abstract", "")
     paper["clean_abstract"] = clean_text(abstract)
 
 
 # Saving processed Dataset
 
 with open("data/arxiv_cs_clean.json","w",encoding="utf-8") as s:
-    json.dump(paper,s,indent=2)
+    json.dump(papers,s,indent=2)
 
 print("Preprocessing Completed")
 print("Saved as: data/arxiv_cs_clean.json")
