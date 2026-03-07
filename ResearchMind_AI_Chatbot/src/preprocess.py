@@ -42,7 +42,7 @@ for paper in papers:
 # Saving processed Dataset
 
 with open("data/arxiv_cs_clean.json","w",encoding="utf-8") as s:
-    json.dump(paper,f,indent=2)
+    json.dump(paper,s,indent=2)
 
 print("Preprocessing Completed")
 print("Saved as: data/arxiv_cs_clean.json")
