@@ -5,11 +5,17 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
 
-nltk.download('stopwords')
-nltk.download('wordnet')
+# This Is Use To Stop Redownload
+try:
+    stopwords.words("english")
+except LookupError:
+    nltk.download("stopwords")
+    nltk.download("wordnet")
+
+
 
 lemmatizer = WordNetLemmatizer()
-stop_word = set(stopwords.words("english"))
+stop_words = set(stopwords.words("english"))
 
 def clean_text(text):
     text = text.lower()
@@ -20,7 +26,7 @@ def clean_text(text):
     words = [
         lemmatizer.lemmatize(word)
         for word in words
-        if word not in stop_word
+        if word not in stop_words
     ]
 
     return " ".join(words)
@@ -36,7 +42,7 @@ print(f"Loaded {len(papers)} Paper's ")
 
 for paper in papers:
     abstract = paper.get("abstract", "")
-    paper["clean_abstract"] = clean_text(abstract)
+    paper["clean_abstract"] = clean_text(abstract) if abstract else ""
 
 
 # Saving processed Dataset
