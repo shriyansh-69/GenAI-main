@@ -2,12 +2,11 @@ import json
 import os
 
 # Input And Output files
-input_file = "arxiv-metadata-oai-snapshot.json"
+input_file = "data/arxiv-metadata-oai-snapshot.json"
 output_file = "data/arxiv_cs.json"
 
 # Valid So It Doesn't Crash
 os.makedirs("data", exist_ok=True)
-
 
 # Extracting Related From The Dataset And  Setting Limit For Number of Document's
 cs_papers = []
@@ -22,7 +21,7 @@ with open(input_file,"r",encoding="utf-8") as f:
 
             categories  = paper.get("categories","")
 
-            if "cs." in categories:
+            if any(cat.startswith("cs.") for cat in categories.split()):
                 cs_papers.append({
                     "id" : paper.get("id"),
                     "title" : paper.get("title"),
@@ -36,7 +35,7 @@ with open(input_file,"r",encoding="utf-8") as f:
             if len(cs_papers) >= limit:
                 break
 
-        except Exception:
+        except json.JSONDecodeError:
             continue  # SKIP Bad Lines Safely 
 
 print(f"Total CS papers extracted: {len(cs_papers)}")
