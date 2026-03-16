@@ -26,3 +26,8 @@ embeddings = HuggingFaceEmbeddings(
     model_name = "sentence-transformers/all-MiniLM-L6-v2"
 )
 
+# Generating text embeddings And Stored Them In FAISS
+vectorstore = FAISS.from_texts(texts,embeddings)
+
+
+
