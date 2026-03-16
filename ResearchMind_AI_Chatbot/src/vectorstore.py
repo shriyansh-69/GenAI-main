@@ -32,3 +32,9 @@ vectorstore = FAISS.from_texts(texts,embeddings)
 # Defining The Path To Save The vector store
 vector_path = os.path.join(base_dir, "vector_store")
 
+# Create a folder if it does not exist
+os.makedirs(vector_path,exist_ok=True)
+
+#Save FAISS index locally
+vectorstore.save_local(vector_path)
+
