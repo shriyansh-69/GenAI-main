@@ -3,15 +3,26 @@
 
 # Importing The Esstinal Library
 import json
+import os
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
 
+# Using The Absolute Path 
+base_dir = os.path.dirname(os.path.dirname(__file__))
+data_path = os.path.join(base_dir,"data","arxiv_cs_clean.json")
+
 # Loading The Cleaned Dataset 
-with open('data/arxiv_cs_clean.json',"r",encoding="utf-8") as f:
+with open(data_path,"r",encoding="utf-8") as f:
     papers = json.load(f)
 
 # Extracting The Text 
-texts = [paper["clean_abstract"] for paper in papers]
+texts = [papers["clean_abstract"] for paper in papers if paper.get("clean_abstract")]
 
 print(f"Loaded {len(texts)} Document's")
+
+# Load Embedding Model
+embeddings = HuggingFaceEmbeddings(
+    model_name = "sentence-transformers/all-MiniLM-L6-v2"
+)
+
