@@ -3,7 +3,6 @@ arxiv-metadata-oai-snapshot.json
 arxiv_cs.json
 data/
 vector_store/
-index.faiss
-index.pkl
+
 
 
