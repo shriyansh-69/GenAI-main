@@ -1,4 +1,4 @@
-# This File Is For Checking That The Paper's Are Loaded Are CS Pages
+# We Can Use This File For Checking If There Any InValid File Are Stored
 
 import json
 
@@ -13,6 +13,6 @@ for paper in papers:
     if not any(cat.startswith("cs.") for cat in categories.split()):
         invalid.append(categories)
 
-print("Total Papers",len(papers))
-print("Invalid Papers",len(invalid))
 
+print("Total papers:", len(papers))
+print("Invalid File", len(invalid))
