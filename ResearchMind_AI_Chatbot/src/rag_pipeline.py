@@ -24,4 +24,27 @@ load_dotenv()
 base_dir = os.path.dirname(os.path.dirname(__file__))
 vector_path = os.path.join(base_dir,"vector_store")
 
+# -----------------------------------------
+# Load embeddings
+# ----------------------------------------- 
+
+embeddings = HuggingFaceEmbeddings(
+    model_name = "sentence-transformers/all-MiniLM-L6-v2"
+)
+
+# -----------------------------------------
+# Load FAISS
+# ----------------------------------------- 
+
+vectorstore = FAISS.load_local(
+    vector_path,
+    embeddings,
+    allow_dangerous_deserialization = True
+)   
+
+retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
+
+
+
+
 
