@@ -10,6 +10,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.prompts import PromptTemplate
 from langchain.chains.retrieval_qa.base import RetrievalQA
+from langchain_groq import ChatGroq
 
 # -----------------------------------------
 # Load env variables
@@ -63,6 +64,23 @@ Answer clearly and explain concepts simply.
 """
 )
 
+# -----------------------------------------
+# LLM (Groq)
+# ----------------------------------------- 
+
+llm = ChatGroq(
+    groq_api_key = os.getenv("GROQ_API_KEY"),
+    model_name="mixtral-8x7b-32768"
+)
+
+# RAG Chain 
+
+qa_chain = RetrievalQA.from_chain_type(
+    llm=llm,
+    retriever = retriever,
+    chain_type="stuff",
+    chain_type_kwargs={"prompt" : prompt}
+)
 
 
 
