@@ -83,5 +83,15 @@ qa_chain = RetrievalQA.from_chain_type(
 )
 
 
+# Ask Function
+def ask_question(query):
+    return qa_chain.run(query)
 
+# CLI 
+if __name__ == "__main__":
+    while True:
+        q = input("Ask:  What is machine learning?")
+        if q.lower() == "exit":
+            break
+        print("\n", ask_question(q), "\n")
 
