@@ -44,6 +44,25 @@ vectorstore = FAISS.load_local(
 
 retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
 
+# -----------------------------------------
+# Prompt
+# ----------------------------------------- 
+
+prompt = PromptTemplate(
+    input_variables=["context","question"],
+    template="""
+you are an expert AI research assistant.
+
+Context:
+{context}
+
+Question:
+{question}
+
+Answer clearly and explain concepts simply.
+"""
+)
+
 
 
 
