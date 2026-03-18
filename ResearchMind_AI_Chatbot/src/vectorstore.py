@@ -35,9 +35,12 @@ embeddings = HuggingFaceEmbeddings(
     model_name = "sentence-transformers/all-MiniLM-L6-v2"
 )
 
+print("Creating embeddings...")
 
 # Generating text embeddings And Stored Them In FAISS
 vectorstore = FAISS.from_texts(texts,embeddings)
+
+print("Embeddings created")
 
 # Defining The Path To Save The vector store
 vector_path = os.path.join(base_dir, "vector_store")
