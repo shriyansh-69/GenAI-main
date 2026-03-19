@@ -70,10 +70,12 @@ Answer clearly and explain concepts simply.
 
 llm = ChatGroq(
     groq_api_key = os.getenv("GROQ_API_KEY"),
-    model_name="mixtral-8x7b-32768"
+    model_name = "llama-3.1-8b-instant"
 )
 
-# RAG Chain 
+# -----------------------------------------
+# RAG Chain
+# -----------------------------------------  
 
 qa_chain = RetrievalQA.from_chain_type(
     llm=llm,
@@ -83,14 +85,18 @@ qa_chain = RetrievalQA.from_chain_type(
 )
 
 
+# -----------------------------------------
 # Ask Function
+# ----------------------------------------- 
+
+
 def ask_question(query):
     return qa_chain.run(query)
 
 # CLI 
 if __name__ == "__main__":
     while True:
-        q = input("Ask:  What is machine learning?")
+        q = input("Ask: ")
         if q.lower() == "exit":
             break
         print("\n", ask_question(q), "\n")
