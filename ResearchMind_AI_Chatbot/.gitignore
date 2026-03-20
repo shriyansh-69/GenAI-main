@@ -4,6 +4,7 @@ arxiv_cs.json
 data/
 vector_store/
 .env
+__pycache__/
 
 
 
