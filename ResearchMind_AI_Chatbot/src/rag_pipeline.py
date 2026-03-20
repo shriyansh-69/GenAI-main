@@ -52,7 +52,11 @@ retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
 prompt = PromptTemplate(
     input_variables=["context","question"],
     template="""
-you are an expert AI research assistant.
+You are an expert AI research assistant.
+
+Use the context to answer.
+
+If unsure, say you don't know.
 
 Context:
 {context}
@@ -60,7 +64,10 @@ Context:
 Question:
 {question}
 
-Answer clearly and explain concepts simply.
+Give:
+- Clear explanation
+- Key points
+- Simple language
 """
 )
 
