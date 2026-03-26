@@ -43,8 +43,8 @@ if query:
         answer = ask_question(query)
 
     # show bot response 
-    st.session_state.messages.append({"role":"assitant","content":answer})
-    st.chat_message("assitant",avatar="🧠").write(answer)
+    st.session_state.messages.append({"role":"assistant","content": answer})
+    st.chat_message("assistant",avatar="🧠").write(answer) 
 
     # ---------- SHOW SOURCES ----------
     docs = retriever.get_relevant_documents(query)
@@ -55,8 +55,7 @@ if query:
             st.write(doc.page_content[:300])
             st.markdown("---")
 
-    # Save response
-    st.session_state.messages.append({"role":"assitant","content": answer})
+
 
 
 

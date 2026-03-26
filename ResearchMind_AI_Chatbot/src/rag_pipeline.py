@@ -11,6 +11,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.prompts import PromptTemplate
 from langchain.chains.retrieval_qa.base import RetrievalQA
 from langchain_groq import ChatGroq
+import pandas as pd
 
 # -----------------------------------------
 # Load env variables
@@ -24,6 +25,17 @@ load_dotenv()
 
 base_dir = os.path.dirname(os.path.dirname(__file__))
 vector_path = os.path.join(base_dir,"vector_store")
+
+# Load the intent file 
+csv_path = os.path.join(base_dir,"data","intents.csv")
+try:
+    df = pd.read_csv(csv_path,on_bad_lines='skip')
+    intent_dict = dict(zip(df["question"], df["answer"]))
+except Exception as e:
+    print("CSV Load Error:", e)
+    intent_dict = {}
+
+
 
 # -----------------------------------------
 # Load embeddings
@@ -54,20 +66,17 @@ prompt = PromptTemplate(
     template="""
 You are an expert AI research assistant.
 
-Use the context to answer.
-
-If unsure, say you don't know.
+Rules:
+- Answer clearly and concisely
+- Use simple language
+- If unsure, say "I don't know"
+- Use context properly
 
 Context:
 {context}
 
 Question:
 {question}
-
-Give:
-- Clear explanation
-- Key points
-- Simple language
 """
 )
 
@@ -98,6 +107,19 @@ qa_chain = RetrievalQA.from_chain_type(
 
 
 def ask_question(query):
+    q = query.lower().strip()
+
+    greetings = ["hi", "hello", "hey", "good morning", "good evening"]
+
+    # Exact match or startswith
+    if any(q == greet or q.startswith(greet) for greet in greetings):
+        return "Hello! 👋 How can I help you with research today?"
+
+    # CSV intent
+    if q in intent_dict:
+        return intent_dict[q]
+
+    # RAG fallback
     return qa_chain.run(query)
 
 # CLI 
