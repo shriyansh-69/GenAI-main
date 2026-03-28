@@ -1,6 +1,5 @@
 .venv
 arxiv-metadata-oai-snapshot.json
-arxiv_cs.json
 data/
 vector_store/
 .env
