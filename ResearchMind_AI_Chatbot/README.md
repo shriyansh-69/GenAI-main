@@ -6,9 +6,9 @@ A Streamlit-based AI chatbot that answers complex Computer Science questions usi
 
 ## 🌐 Live Demo
 
-You can access the ResearchMind AI Chatbot at the link below:
+You Can Access The ResearchMind_AI_Chatbot At This Below Link :- <br>
 
-🔗 ResearchMind_AI_Chatbot
+🔗 [ResearchMind_AI_Chatbot](https://customerservicechatbot69.streamlit.app/)
 
 ---
 
