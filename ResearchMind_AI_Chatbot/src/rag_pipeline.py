@@ -49,11 +49,27 @@ embeddings = HuggingFaceEmbeddings(
 # Load FAISS
 # ----------------------------------------- 
 
-vectorstore = FAISS.load_local(
-    vector_path,
-    embeddings,
-    allow_dangerous_deserialization = True
-)   
+if not os.path.exists(vector_path):
+    print("Vector store not found. Creating...")
+
+    import json
+
+    data_path = os.path.join(base_dir, "data", "arxiv_cs_clean.json")
+
+    with open(data_path, "r", encoding="utf-8") as f:
+        papers = json.load(f)
+
+    texts = [p["clean_abstract"] for p in papers if p.get("clean_abstract")]
+
+    vectorstore = FAISS.from_texts(texts[:5000], embeddings)  # limit for cloud
+    vectorstore.save_local(vector_path)
+
+else:
+    vectorstore = FAISS.load_local(
+        vector_path,
+        embeddings,
+        allow_dangerous_deserialization=True
+    )
 
 retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
 
