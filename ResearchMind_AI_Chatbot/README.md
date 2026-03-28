@@ -53,7 +53,6 @@ It combines semantic search with Large Language Models to provide accurate and c
 ## 📂 Project Structure
 
 ```
-
 ResearchMind_AI_Chatbot/
 │
 ├── app.py
