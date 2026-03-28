@@ -52,7 +52,7 @@ It combines semantic search with Large Language Models to provide accurate and c
 
 ## 📂 Project Structure
 
-``ResearchMind_AI_Chatbot/
+ResearchMind_AI_Chatbot/
 │
 ├── app.py
 ├── requirements.txt
@@ -72,4 +72,4 @@ It combines semantic search with Large Language Models to provide accurate and c
 │
 ├── vector_store/ # (generated, ignored in git)
 ├── notebook/
-│ └── demo.ipynb``
+│ └── demo.ipynb
