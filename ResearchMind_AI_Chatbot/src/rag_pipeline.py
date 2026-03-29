@@ -54,7 +54,7 @@ if not os.path.exists(vector_path):
 
     import json
 
-    data_path = os.path.join(base_dir, "data", "arxiv_cs_clean.json")
+    data_path = os.path.join(base_dir, "data", "arxiv_cs.json")
 
     with open(data_path, "r", encoding="utf-8") as f:
         papers = json.load(f)
