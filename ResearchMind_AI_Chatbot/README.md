@@ -1,5 +1,7 @@
 # 🧠 ResearchMind AI Chatbot
 
+# Still In Progess
+
 A Streamlit-based AI chatbot that answers complex Computer Science questions using research papers from the arXiv dataset with Retrieval-Augmented Generation (RAG).
 
 ---
@@ -8,7 +10,7 @@ A Streamlit-based AI chatbot that answers complex Computer Science questions usi
 
 You Can Access The ResearchMind_AI_Chatbot At This Below Link :- <br>
 
-🔗 [ResearchMind_AI_Chatbot](https://customerservicechatbot69.streamlit.app/)
+🔗 [ResearchMind_AI_Chatbot](https://customerservicechatbot69.streamlit.app/) # Not Working Right Now
 
 ---
 
