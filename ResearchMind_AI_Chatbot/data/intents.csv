@@ -1,6 +1,6 @@
 question,answer
 
-# -------- GREETINGS --------
+
 hello,Hello! 👋 How can I assist you with computer science research today?
 hi,Hi there! 😊 What would you like to explore in AI or CS?
 hey,Hey! Ask me anything about machine learning or research papers.
@@ -34,7 +34,7 @@ how are you doing,I'm doing well! What would you like to learn today?
 are you fine,Yes, I'm functioning perfectly! How can I help?
 how's it going,Going great! What can I assist you with?
 
-# -------- THANK YOU --------
+
 thank you,You're welcome! 😊 Happy to help.
 thanks,Anytime! Let me know if you need anything else.
 thanks a lot,Glad I could help! 😊
@@ -47,7 +47,7 @@ i appreciate your help,Happy to help anytime! 😊
 thanks for helping,You're welcome! Let me know if you need more help.
 thanks for your help,Anytime! 😊
 
-# -------- GOODBYE --------
+
 bye,Goodbye! 👋 Have a great day.
 goodbye,See you later! Keep learning 🚀
 see you,Take care! Come back anytime.
