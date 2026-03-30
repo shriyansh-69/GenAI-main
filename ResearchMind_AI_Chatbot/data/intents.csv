@@ -1,22 +1,64 @@
 question,answer
+
+# -------- GREETINGS --------
 hello,Hello! 👋 How can I assist you with computer science research today?
-hi,Hi there! What would you like to explore in AI or CS?
-hey,Hey! 😊 Ask me anything about machine learning or research papers.
+hi,Hi there! 😊 What would you like to explore in AI or CS?
+hey,Hey! Ask me anything about machine learning or research papers.
+hello there,Hello there! How can I help you today?
+hi there,Hi there! What topic are you working on?
+hey there,Hey there! 😊 Need help with AI or research?
+yo,Hey! What's up? Need help with something?
+hola,Hello! How can I assist you today?
+greetings,Greetings! How may I assist you?
+
 good morning,Good morning! ☀️ Ready to dive into some research?
+morning,Good morning! What would you like to learn today?
+very good morning,Very good morning! ☀️ How can I help you today?
+good morning bot,Good morning! I'm here to help you with research.
+morning assistant,Good morning! Ask me anything in AI or CS.
+
+good afternoon,Good afternoon! 😊 What topic are you exploring today?
+afternoon,Good afternoon! How can I assist you?
+good afternoon bot,Good afternoon! Need help with something?
+
 good evening,Good evening! 🌙 How can I help you today?
+evening,Good evening! What would you like to explore?
+good evening bot,Good evening! Ask me anything about AI.
 
-who are you,I am ResearchMind AI, your assistant for understanding computer science research papers.
-what can you do,I can help explain research papers, summarize concepts, and answer AI/ML questions.
-who is your creator,I was developed by Shriyansh Tiwari using AI technologies.
-who made you,I am built as a research assistant chatbot using LangChain, FAISS, and LLMs.
-
-thank you,You're welcome! 😊 Happy to help.
-thanks,Anytime! Let me know if you need anything else.
-
-bye,Goodbye! 👋 Have a great day.
-goodbye,See you later! Keep learning 🚀
-
-help,You can ask me about machine learning, deep learning, NLP, or research papers.
-what is your purpose,My purpose is to help you understand complex computer science concepts easily.
+what's up,All good here! What do you want to explore?
+whats up,Everything's good! How can I help you?
+sup,Hey! 😊 What can I do for you?
 
 how are you,I'm doing great! Ready to help you with research 😊
+how are you doing,I'm doing well! What would you like to learn today?
+are you fine,Yes, I'm functioning perfectly! How can I help?
+how's it going,Going great! What can I assist you with?
+
+# -------- THANK YOU --------
+thank you,You're welcome! 😊 Happy to help.
+thanks,Anytime! Let me know if you need anything else.
+thanks a lot,Glad I could help! 😊
+thank you so much,You're very welcome! 😊
+many thanks,You're welcome! Always here to assist.
+thanks buddy,No problem! Happy to help 😊
+thanks bro,You're welcome! 👍
+appreciate it,You're welcome! Glad I could help.
+i appreciate your help,Happy to help anytime! 😊
+thanks for helping,You're welcome! Let me know if you need more help.
+thanks for your help,Anytime! 😊
+
+# -------- GOODBYE --------
+bye,Goodbye! 👋 Have a great day.
+goodbye,See you later! Keep learning 🚀
+see you,Take care! Come back anytime.
+see you later,See you later! 😊
+talk to you later,Looking forward to helping you again!
+catch you later,Catch you later! 👋
+bye bye,Bye bye! Have a great day!
+ok bye,Goodbye! 😊
+alright bye,Take care! 👋
+i am leaving,Goodbye! Feel free to return anytime.
+i have to go,No problem! See you next time 😊
+gtg (got to go),Got it! See you soon 👋
+exit,Goodbye! 👋
+quit,Session ended. See you again!
