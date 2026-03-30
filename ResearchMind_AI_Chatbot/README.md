@@ -1,6 +1,5 @@
 # 🧠 ResearchMind AI Chatbot
 
-# Still In Progess
 
 A Streamlit-based AI chatbot that answers complex Computer Science questions using research papers from the arXiv dataset with Retrieval-Augmented Generation (RAG).
 
@@ -10,7 +9,7 @@ A Streamlit-based AI chatbot that answers complex Computer Science questions usi
 
 You Can Access The ResearchMind_AI_Chatbot At This Below Link :- <br>
 
-🔗 [ResearchMind_AI_Chatbot](https://customerservicechatbot69.streamlit.app/) # Not Working Right Now
+🔗 [ResearchMind_AI_Chatbot](https://researchmindaichatbot.streamlit.app/) # Not Working Right Now
 
 ---
 
@@ -64,17 +63,18 @@ ResearchMind_AI_Chatbot/
 ├── .gitignore
 │
 ├── data/
-│ ├── arxiv_cs.json
-│ ├── arxiv_cs_clean.json
-│ └── intents.csv
+│   ├── arxiv_cs.json
+│   ├── arxiv_cs_clean.json
+│   └── intents.csv
 │
 ├── src/
-│ ├── preprocess.py
-│ ├── vectorstore.py
-│ ├── rag_pipeline.py
+│   ├── preprocess.py
+│   ├── vectorstore.py
+│   ├── rag_pipeline.py
 │
-├── vector_store/ # (generated, ignored in git)
+├── vector_store/   # (generated, ignored in git)
+│
 ├── notebook/
-│ └── demo.ipynb
+│   └── demo.ipynb
 
 ```
