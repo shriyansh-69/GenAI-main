@@ -59,9 +59,20 @@ if not os.path.exists(vector_path):
     with open(data_path, "r", encoding="utf-8") as f:
         papers = json.load(f)
 
-    texts = [p["clean_abstract"] for p in papers if p.get("clean_abstract")]
+    texts = []
 
-    vectorstore = FAISS.from_texts(texts[:5000], embeddings)  # limit for cloud
+    for p in papers:
+        text = p.get("abstract")
+
+        if text and isinstance(text, str) and len(text.strip()) > 20:
+            texts.append(text)
+
+    print("Valid texts:", len(texts))
+
+    if len(texts) == 0:
+        raise ValueError("No valid abstracts found in dataset")
+
+    vectorstore = FAISS.from_texts(texts[:5000], embeddings)
     vectorstore.save_local(vector_path)
 
 else:
