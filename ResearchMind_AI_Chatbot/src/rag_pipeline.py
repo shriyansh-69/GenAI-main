@@ -82,7 +82,7 @@ else:
         allow_dangerous_deserialization=True
     )
 
-retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
+retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
 
 # -----------------------------------------
 # Prompt
