@@ -137,17 +137,28 @@ def ask_question(query):
     q = query.lower().strip()
 
     greetings = ["hi", "hello", "hey", "good morning", "good evening"]
+    thanks = ["thank", "thanks", "appreciate"]
+    goodbye = ["bye", "goodbye", "see you", "exit", "quit"]
 
-    # Exact match or startswith
-    if any(q == greet or q.startswith(greet) for greet in greetings):
-        return "Hello! 👋 How can I help you with research today?"
+    # Greeting
+    if any(q.startswith(g) for g in greetings):
+        return {"answer": "Hello! 👋 How can I help you with research today?", "type": "no_source"}
+
+    # Thank you
+    if any(word in q for word in thanks):
+        return {"answer": "You're welcome! 😊", "type": "no_source"}
+
+    # Goodbye
+    if any(word in q for word in goodbye):
+        return {"answer": "Goodbye! 👋", "type": "no_source"}
 
     # CSV intent
     if q in intent_dict:
-        return intent_dict[q]
+        return {"answer": intent_dict[q], "type": "intent"}
 
-    # RAG fallback
-    return qa_chain.run(query)
+    # RAG
+    result = qa_chain.run(query)
+    return {"answer": result, "type": "rag"}
 
 # CLI 
 if __name__ == "__main__":

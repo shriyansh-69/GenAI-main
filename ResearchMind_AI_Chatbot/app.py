@@ -40,20 +40,24 @@ if query:
 
     # generate response 
     with st.spinner("Thinking...."):
-        answer = ask_question(query)
+        response = ask_question(query)
+    
+    answer = response["answer"]
+    response_type = response["type"]
 
     # show bot response 
     st.session_state.messages.append({"role":"assistant","content": answer})
     st.chat_message("assistant",avatar="🧠").write(answer) 
 
-    # ---------- SHOW SOURCES ----------
-    docs = retriever.get_relevant_documents(query)
+    # ---------- Show sources Only When Needed ----------
+    if response_type != "no_source":
+        docs = retriever.get_relevant_documents(query)
 
-    with st.expander("View Source"):
-        for i,doc in enumerate(docs):
-            st.markdown(f"**Source {i+1}:**")
-            st.write(doc.page_content[:300])
-            st.markdown("---")
+        with st.expander("📄 View Sources"):
+            for i, doc in enumerate(docs):
+                st.markdown(f"**Source {i+1}:**")
+                st.write(doc.page_content[:300])
+                st.markdown("---")
 
 
 
