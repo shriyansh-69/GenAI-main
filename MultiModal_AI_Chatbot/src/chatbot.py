@@ -18,7 +18,7 @@ def get_response(user_input, image):
     prompt = """
 You are an expert AI assitant.
 
-Rules:o
+Rules:
 - Answer clearly
 - use simple language
 - be concise
