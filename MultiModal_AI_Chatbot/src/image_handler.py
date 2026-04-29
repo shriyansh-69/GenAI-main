@@ -14,7 +14,7 @@ def process_image(user_input,image):
         user_input = "Describe this image"
 
     response = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-2.0-flash",
         contents=[user_input,   image]
     )
 
