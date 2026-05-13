@@ -1,4 +1,4 @@
-# This File Sever As The Main Logic For Application
+# This File Sever As The MAin Logic For Application
 
 from google import genai
 import os
@@ -39,28 +39,24 @@ Question:
 
 
 # Image Generation 
-def generate_image(prompt, image=None):
+def generate_image(prompt):
 
     if not prompt:
         return "Please enter a valid prompt."
 
-    for _ in range(3):
-        try:
-            if image:
-                response = client.models.generate_content(
-                    model="gemini-2.0-flash",
-                    contents=[prompt, image]
-                )
-            else:
-                response = client.models.generate_content(
-                    model="gemini-2.0-flash",
-                    contents=f"Generate an image of: {prompt}"
-                )
+    try:
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=f"""
+You are an AI image generation assistant.
 
-            return response.text
+Generate  a realistic image for this prompt:
 
-        except Exception as e:
-            print("Retrying...", e)
-            time.sleep(5)
+{prompt}
+"""
+        )
 
-    return "Server busy. Please try again later."
+        return response.text
+
+    except Exception as e:
+        return f"Gemini Error: {str(e)}"
