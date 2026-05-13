@@ -23,7 +23,7 @@ if st.button("Send"):
         if mode == "Image Generation":
             response = generate_image(user_input)
             st.write("### Generated Output:")
-            st.write(response)
+            st.success(response)
 
         # 🔹 Chat Mode
         else:
